@@ -10,6 +10,7 @@
   "dependencies": {
     "@strapi/plugin-upload": "^4.24.2",
     "@strapi/plugin-users-permissions": "4.24.2",
+    "@strapi/provider-upload-local": "^4.24.2",
     "@strapi/strapi": "4.24.2",
     "pg": "8.11.3"
   }

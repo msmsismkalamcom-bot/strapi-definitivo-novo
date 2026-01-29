@@ -7,7 +7,15 @@
       database: env('DATABASE_NAME'),
       user: env('DATABASE_USERNAME'),
       password: env('DATABASE_PASSWORD'),
-      ssl: env.bool('DATABASE_SSL', true),
+      ssl: env.bool('DATABASE_SSL', true) ? {
+        rejectUnauthorized: false
+      } : false,
     },
-  },
+    pool: {
+      min: 0,
+      max: 10,
+      acquireTimeoutMillis: 60000,
+      idleTimeoutMillis: 30000
+    }
+  }
 });
