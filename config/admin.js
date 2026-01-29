@@ -7,7 +7,9 @@
   },
   transfer: {
     token: {
-      salt: env("API_TOKEN_SALT", "fallback_transfer_salt"),
+      salt: env("TRANSFER_TOKEN_SALT", env("API_TOKEN_SALT")),
     },
   },
+  url: "/admin",
+  serveAdminPanel: true,
 });

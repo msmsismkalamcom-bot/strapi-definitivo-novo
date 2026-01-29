@@ -4,4 +4,5 @@
   app: {
     keys: env.array("APP_KEYS"),
   },
+  url: env("URL", "https://strapi-definitivo-novo-2.onrender.com"),
 });
