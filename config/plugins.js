@@ -1,10 +1,9 @@
 ﻿module.exports = ({ env }) => ({
   upload: {
     config: {
-      provider: 'local',
-      providerOptions: {
-        sizeLimit: 1000000,
-      },
+      provider: "local",
+      sizeLimit: 1000000,
+      providerOptions: {},
     },
   },
 });
