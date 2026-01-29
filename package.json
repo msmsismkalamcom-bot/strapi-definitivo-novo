@@ -14,5 +14,9 @@
     "@strapi/plugin-upload": "4.24.2",
     "@strapi/provider-upload-local": "4.24.2",
     "pg": "8.11.3"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
   }
 }
