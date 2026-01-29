@@ -1,27 +1,6 @@
-services:
+﻿services:
   - type: web
     name: strapi-24-7
-    env: node
+    dockerfilePath: ./Dockerfile
     region: sao
     plan: free
-    buildCommand: |
-      npm ci
-      npm run build
-    startCommand: npm start
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: 1337
-      - key: HOST
-        value: 0.0.0.0
-      - key: DATABASE_URL
-        value: postgresql://postgres:QUm94o4oPL9x6bhGCX4B4zIGxwZeRRIF@db.dpg-d5kgas94tr6s73au58pg-a.oregon-postgres.render.com:5432/strapi_5cj5
-      - key: JWT_SECRET
-        value: VjE6Tm5wdnZDeLJRuChi9xHfBXz14vsr
-      - key: ADMIN_JWT_SECRET
-        value: EjlairYvxJzWK0NXFdtgUh4wCTbIfVsL
-      - key: APP_KEYS
-        value: '["DHAtmn6xcV7kdZgIKzNELwjvUFyiGeJ5","ORZK4WUncvHQYyMAXVJrsjIFibEa0kGe","CXizoel82hkMGKUYm9avrdENwf7pcV4D","hbXlRMGLfBNcA9mxyDd8to0Wri4QP1kg"]'
-      - key: API_TOKEN_SALT
-        value: api_salt_6VBNL2qptAFExwGI
