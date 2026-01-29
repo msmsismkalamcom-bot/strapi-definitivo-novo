@@ -1,0 +1,35 @@
+﻿app = "strapi-santos-290957"
+primary_region = "gru"  # São Paulo
+
+[build]
+  builder = "heroku/buildpacks:20"
+
+[[services]]
+  internal_port = 1337
+  protocol = "tcp"
+  processes = ["app"]
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+
+  [[services.http_checks]]
+    interval = 10000
+    grace_period = "5s"
+    method = "get"
+    path = "/"
+    protocol = "http"
+    timeout = 2000
+    tls_skip_verify = false
+
+[env]
+  NODE_ENV = "production"
+  PORT = "1337"
+  HOST = "0.0.0.0"
