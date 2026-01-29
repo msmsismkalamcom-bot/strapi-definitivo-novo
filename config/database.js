@@ -1,9 +1,13 @@
 ﻿module.exports = ({ env }) => ({
   connection: {
-    client: "postgres",
+    client: 'postgresql',
     connection: {
-      connectionString: env("DATABASE_URL"),
-      ssl: { rejectUnauthorized: false },
+      host: env('DATABASE_HOST'),
+      port: env.int('DATABASE_PORT'),
+      database: env('DATABASE_NAME'),
+      user: env('DATABASE_USERNAME'),
+      password: env('DATABASE_PASSWORD'),
+      ssl: env.bool('DATABASE_SSL', true),
     },
     pool: {
       min: 0,
@@ -11,5 +15,5 @@
       acquireTimeoutMillis: 60000,
       idleTimeoutMillis: 30000,
     },
-  },
+  }
 });
